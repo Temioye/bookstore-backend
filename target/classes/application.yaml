@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: bookstore
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookstore
+    username: root
+    password: your_password_here

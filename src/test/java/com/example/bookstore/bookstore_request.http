@@ -1,0 +1,33 @@
+#GET
+###
+GET http://localhost:8080/books/get_stock
+
+###
+#this get reused through the code
+@id = 1
+@title = Gatsby
+@author = Fitzgerald
+GET http://localhost:8080/books/{{id}}
+
+###
+GET http://localhost:8080/books/search?
+    title={{title}}
+
+###
+GET http://localhost:8080/books/search?
+    author={{author}}
+
+###
+GET http://localhost:8080/books/search?
+    author={{author}}&
+    title={{title}}
+
+#Expect a 404 - stock is less than 21
+#POST
+###
+POST http://localhost:8080/books/purchase/{{id}}?
+    quantity=21
+
+###
+POST http://localhost:8080/books/refund/{{id}}?
+    quantity=2
